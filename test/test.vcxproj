@@ -73,11 +73,19 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mem.cpp" />
+    <ClCompile Include="old\hstring.cpp" />
+    <ClCompile Include="old\hstringlist.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="command.h" />
     <ClInclude Include="mem.h" />
+    <ClInclude Include="old\hptrie.hpp" />
+    <ClInclude Include="old\hptrie_src.hpp" />
+    <ClInclude Include="old\hsptrie.hpp" />
+    <ClInclude Include="old\hsptrie_src.hpp" />
     <ClInclude Include="testhash.h" />
+    <ClInclude Include="testqhash.h" />
+    <ClInclude Include="testptrie.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
