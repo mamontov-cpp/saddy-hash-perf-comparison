@@ -8,6 +8,11 @@
 #include "testqhash.h"
 #include "testptrie.h"
 #include "teststdmap.h"
+#include "testboostmap.h"
+#include "testdensehashmap.h"
+
+#include <google/sparse_hash_map>
+
 
 
 void produceCommands(std::vector<Command<int> >& commands, size_t count)
@@ -82,6 +87,14 @@ int main(int argc, char *argv[])
         mem = testStdMapInsertRemoveLookup<int>(commands);
         timer.stop();
         printf("std::unordered_map %lf  %lf\n", timer.elapsed(), mem / 1024.0);
+        timer.start();
+        mem = testBoostMapInsertRemoveLookup<int>(commands);
+        timer.stop();
+        printf("boost::unordered_map %lf  %lf\n", timer.elapsed(), mem / 1024.0);
+        timer.start();
+        mem = testDenseMapInsertRemoveLookup<int>(commands);
+        timer.stop();
+        printf("google::dense_hash_map %lf  %lf\n", timer.elapsed(), mem / 1024.0);
 
         printf("\n\n\nTests walkthrough  %d (ms):\n", counts[i]);
 
@@ -102,6 +115,14 @@ int main(int argc, char *argv[])
         mem = testStdMapWalkthrough<int>(commands);
         timer.stop();
         printf("std::unordered_map %lf  %lf\n", timer.elapsed(), mem / 1024.0);
+        timer.start();
+        mem = testBoostMapWalkthrough<int>(commands);
+        timer.stop();
+        printf("boost::unordered_map %lf  %lf\n", timer.elapsed(), mem / 1024.0);
+        timer.start();
+        mem = testDenseMapWalkthrough<int>(commands);
+        timer.stop();
+        printf("google::dense_hash_map %lf  %lf\n", timer.elapsed(), mem / 1024.0);
 
     }
     return 0;
