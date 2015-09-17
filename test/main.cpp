@@ -7,6 +7,7 @@
 #include "testhash.h"
 #include "testqhash.h"
 #include "testptrie.h"
+#include "teststdmap.h"
 
 
 void produceCommands(std::vector<Command<int> >& commands, size_t count)
@@ -77,6 +78,10 @@ int main(int argc, char *argv[])
         mem = testPtrieInsertRemoveLookup<int>(commands);
         timer.stop();
         printf("hst::ptrie %lf  %lf\n", timer.elapsed(), mem / 1024.0);
+        timer.start();
+        mem = testStdMapInsertRemoveLookup<int>(commands);
+        timer.stop();
+        printf("std::unordered_map %lf  %lf\n", timer.elapsed(), mem / 1024.0);
 
         printf("\n\n\nTests walkthrough  %d (ms):\n", counts[i]);
 
@@ -93,6 +98,11 @@ int main(int argc, char *argv[])
         mem = testPtrieWalkthrough<int>(commands);
         timer.stop();
         printf("hst::ptrie %lf  %lf\n", timer.elapsed(), mem / 1024.0);
+        timer.start();
+        mem = testStdMapWalkthrough<int>(commands);
+        timer.stop();
+        printf("std::unordered_map %lf  %lf\n", timer.elapsed(), mem / 1024.0);
+
     }
     return 0;
 }
