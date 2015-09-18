@@ -5,7 +5,7 @@
 
 
 template<typename T>
-size_t testBoostMapInsertRemoveLookup(const std::vector<Command<int> >& commands)
+size_t testBoostMapInsertRemoveLookup(const std::vector<Command<T> >& commands)
 {
     size_t memory_size = getCurrentRSS();
     boost::unordered_map<T, int> v;
@@ -31,7 +31,7 @@ size_t testBoostMapInsertRemoveLookup(const std::vector<Command<int> >& commands
 }
 
 template<typename T>
-size_t testBoostMapWalkthrough(const std::vector<Command<int> >& commands)
+size_t testBoostMapWalkthrough(const std::vector<Command<T> >& commands)
 {
     size_t memory_size = getCurrentRSS();
     boost::unordered_map<T, int> v;

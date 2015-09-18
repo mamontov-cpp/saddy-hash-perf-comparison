@@ -3,7 +3,7 @@
 #include "mem.h"
 
 template<typename T>
-size_t testQHashInsertRemoveLookup(const std::vector<Command<int> >& commands)
+size_t testQHashInsertRemoveLookup(const std::vector<Command<T> >& commands)
 {
     size_t memory_size = getCurrentRSS();
     QHash<T, int> v;
@@ -29,7 +29,7 @@ size_t testQHashInsertRemoveLookup(const std::vector<Command<int> >& commands)
 }
 
 template<typename T>
-size_t testQHashWalkthrough(const std::vector<Command<int> >& commands)
+size_t testQHashWalkthrough(const std::vector<Command<T> >& commands)
 {
     size_t memory_size = getCurrentRSS();
     QHash<T, int> v;

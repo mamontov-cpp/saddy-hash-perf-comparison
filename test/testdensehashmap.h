@@ -5,7 +5,7 @@
 
 
 template<typename T>
-size_t testDenseMapInsertRemoveLookup(const std::vector<Command<int> >& commands)
+size_t testDenseMapInsertRemoveLookup(const std::vector<Command<T> >& commands)
 {
     size_t memory_size = getCurrentRSS();
     google::dense_hash_map<T, int> v;
@@ -37,7 +37,7 @@ size_t testDenseMapInsertRemoveLookup(const std::vector<Command<int> >& commands
 }
 
 template<typename T>
-size_t testDenseMapWalkthrough(const std::vector<Command<int> >& commands)
+size_t testDenseMapWalkthrough(const std::vector<Command<T> >& commands)
 {
     size_t memory_size = getCurrentRSS();
     google::dense_hash_map<T, int> v;

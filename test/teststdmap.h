@@ -11,7 +11,7 @@
 #endif
 
 template<typename T>
-size_t testStdMapInsertRemoveLookup(const std::vector<Command<int> >& commands)
+size_t testStdMapInsertRemoveLookup(const std::vector<Command<T> >& commands)
 {
     size_t memory_size = getCurrentRSS();
     MAP_TYPE <T, int> v;
@@ -37,7 +37,7 @@ size_t testStdMapInsertRemoveLookup(const std::vector<Command<int> >& commands)
 }
 
 template<typename T>
-size_t testStdMapWalkthrough(const std::vector<Command<int> >& commands)
+size_t testStdMapWalkthrough(const std::vector<Command<T> >& commands)
 {
     size_t memory_size = getCurrentRSS();
     MAP_TYPE <T, int> v;
